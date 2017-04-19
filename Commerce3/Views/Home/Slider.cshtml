@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<Commerce3.Models.Manset>
+	<!--banner-->
+<div class="banner">
+    <div class="container">
+        <div class="banner-text">
+            
+            <div class="col-sm-7 banner-right wow fadeInRight animated" data-wow-delay=".5s">
+                <section class="slider grid">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            @foreach (var item in Model)
+                            {
+                                <li>
+                                    <h4>@item.Mbaslik</h4>
+                                    <img src="@item.MresimYol" alt="">
+                                </li>
+                            }
+                           
+</div>
+                </section>
+                <!--FlexSlider-->
+                <script defer src="js/jquery.flexslider.js"></script>
+                <script type="text/javascript">
+						$(window).load(function(){
+						  $('.flexslider').flexslider({
+							animation: "pagination",
+							start: function(slider){
+							  $('body').removeClass('loading');
+							}
+						  });
+						});
+                </script>
+                <!--End-slider-script-->
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!--//banner-->
+
+

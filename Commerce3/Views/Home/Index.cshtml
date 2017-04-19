@@ -1,0 +1,32 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{Html.RenderAction("Slider");}:
+@*@{Html.RenderAction("UrunGetir");}:*@
+@model IPagedList<Commerce3.Models.Urunler>
+
+<div class="gallery-info">
+    @foreach (var urunler in Model)
+    {
+        <div class="col-md-3 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+            <a href="/Urunler/Detay/@urunler.Id"><img src="@urunler.ResimYolu" class="img-responsive" alt="" /></a>
+            <div class="gallery-text simpleCart_shelfItem">
+                <h5><a class="name" href="single.html">@urunler.Baslik </a></h5>
+                <p><span class="item_price">@urunler.Fiyat Tl</span></p>
+
+            </div>
+        </div>
+    }
+    <div class="pagedlist">
+        @Html.PagedListPager(Model, page => Url.Action("index", new { page }));
+    <div class="clearfix"></div>
+</div>
+    </div>
+</div>
+
+ 
+
