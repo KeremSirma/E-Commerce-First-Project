@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="gallery-info">
+    @foreach (var urunler in Model)
+    {
+        <div class="col-md-3 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+            <a href="/Urunler/Detay/@urunler.Id"><img src="@urunler.ResimYolu" class="img-responsive" alt="" /></a>
+            <div class="gallery-text simpleCart_shelfItem">
+                <h5><a class="name" href="single.html">@urunler.Baslik </a></h5>
+                <p><span class="item_price">@urunler.Fiyat Tl</span></p>
+
+            </div>
+        </div>
+    }
+    <div class="clearfix"></div>
+</div>
+    </div>
+</div>
